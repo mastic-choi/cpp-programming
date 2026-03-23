@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mastic-choi/code/cpp-programming/Learning_C/lec05/output/learningStructure'
+relocations:     []
+...
