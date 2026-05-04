@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/mastic-choi/code/cpp-programming/final/lec13/output/studyStaticMember'
+relocations:     []
+...
