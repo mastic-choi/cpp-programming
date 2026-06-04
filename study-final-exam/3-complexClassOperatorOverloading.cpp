@@ -5,20 +5,34 @@ public:
     Complex() : re(0), im(0){}
     Complex(double _re, double _im) : re(_re), im(_im){}
     Complex(double _re) : re(_re), im(0.0) {}
-
     Complex& operator=(const Complex& other){
         re = other.re;
         im = other.im;
         return *this;
     }
-    Complex operator+(const Complex& other){
+    Complex operator+(const Complex& other) const {
         return Complex(other.re+re, other.im+im);
     }
-    Complex operator-(const Complex& other){
+    Complex operator-(const Complex& other) const {
         return Complex(re - other.re, im - other.im);
     }
-    Complex operator-(){
+    Complex operator-() const {
         return Complex(-re, -im);
+    }
+    Complex operator*(const Complex& other) const{
+        return Complex(other.re * re - im*other.im, other.im*re + im*other.re);
+    }
+    bool operator==(const Complex&o) const{
+        return (re == o.re) && (im == o.im);
+    }
+    Complex& operator++(){//전위 증가(++c)
+        re += 1.0;
+        return *this;
+    }
+    Complex operator++(int){ //반환 후 증가, int 더미 구분
+        Complex tmp = *this;
+        re += 1.0;
+        return tmp;
     }
 
 };
